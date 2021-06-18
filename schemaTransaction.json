@@ -1,0 +1,187 @@
+ {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://consumerdatastandards.org.au/v1.0.0/transactiondetail",
+    "type": "object",
+    "required" : [
+        "data",
+        "links"
+        ],
+    "properties" : {
+        "data" : {
+            "type": "object",
+            "required" : [
+                "accountId",
+                "amount",
+                "description",
+                "isDetailAvailable",
+                "reference",
+                "status",
+                "type"
+                ],
+            "properties" : {
+                "accountId" : {
+                    "type" : "string",
+                    "pattern": "^[\\x00-\\x7F]+$"
+                },
+                "transactionId" : {
+                    "type" : "string",
+                    "pattern": "^[\\x00-\\x7F]+$"
+                },
+                "isDetailAvailable" : {
+                    "type" : "boolean"
+                },
+                "type" : {
+                    "type" : "string",
+                    "enum" : [ "FEE", "INTEREST_CHARGED", "INTEREST_PAID", "TRANSFER_OUTGOING", "TRANSFER_INCOMING", "PAYMENT", "DIRECT_DEBIT", "OTHER" ]
+                },
+                "status" : {
+                    "type" : "string",
+                    "enum" : [ "PENDING", "POSTED" ]
+                },
+                "description" : {
+                    "type" : "string"
+                },
+                "postingDateTime" : {
+                    "type" : "string",
+                    "format": "date-time"
+                },
+                "valueDateTime" : {
+                    "type" : "string",
+                    "format": "date-time"
+                },
+                "executionDateTime" : {
+                    "type" : "string",
+                    "format": "date-time"
+                },
+                "amount" : {
+                    "type" : "string",
+                    "pattern": "^[-]?\\d{1,16}[.]\\d{2,}$"
+                },
+                "currency" : {
+                    "type" : "string",
+                    "pattern": "^[A-Z]{3}$"
+                },
+                "reference" : {
+                    "type" : "string"
+                },
+                "merchantName" : {
+                    "type" : "string"
+                },
+                "merchantCategoryCode" : {
+                    "type" : "string"
+                },
+                "billerCode" : {
+                    "type" : "string"
+                },
+                "billerName" : {
+                    "type" : "string"
+                },
+                "crn" : {
+                    "type" : "string"
+                },
+                "apcaNumber" : {
+                    "type" : "string"
+                },
+                "extendedData": {
+                    "type": "object",
+                    "properties": {
+                        "payer" : {
+                            "type" : "string"
+                        },
+                        "payee" : {
+                            "type" : "string"
+                        },
+                        "service" : {
+                            "type" : "string",
+                            "enum": ["X2P1.01"]
+                        },
+                        "extensionUType" : {
+                            "type" : "string",
+                            "enum": ["x2p101Payload"]
+                        },
+                        "x2p101Payload": {
+                            "type": "object",
+                            "required": [
+                                "extendedDescription"
+                                ],
+                            "properties": {
+                                "extendedDescription": {
+                                    "type" : "string"
+                                },
+                                "endToEndId": {
+                                    "type" : "string"
+                                },
+                                "purposeCode": {
+                                    "type" : "string"
+                                }
+                            }
+                        }
+                    },
+                    "allOf": [
+                        {
+                            "anyOf": [
+                                {
+                                    "not": {
+                                        "required": [ "extensionUType" ]
+                                    }
+                                },
+                                {
+                                    "required": [ "x2p101Payload" ]
+                                }
+                                ]
+                        },
+                        {
+                            "oneOf": [
+                                {
+                                    "required": [ "payer" ]
+                                },
+                                {
+                                    "required": [ "payee" ]
+                                }
+                                ]
+                        }
+                        ]
+                }
+            },
+            "allOf": [
+                {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "isDetailAvailable": { "enum": [ false ] }
+                            }
+                        },
+                        {
+                            "required": [ "transactionId" ]
+                        }
+                        ]
+                },
+                {
+                    "anyOf": [
+                    {
+                        "properties": {
+                            "status": { "enum": ["PENDING"] }
+                        }
+                    },
+                    {
+                        "required": [ "postingDateTime" ]
+                    }
+                    ]
+                }
+                ]
+        },
+        "links" : {
+            "type" : "object",
+            "required" : [
+                "self"
+                ],
+            "properties" : {
+                "self" : {
+                    "type" : "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "meta" : {}
+    }
+}
