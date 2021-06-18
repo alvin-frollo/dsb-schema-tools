@@ -1,0 +1,67 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://consumerdatastandards.org.au/v1.0.0/status",
+	"type": "object",
+	"required": [
+		"data",
+		"links"
+	],
+	"properties": {
+		"data": {
+			"type": "object",
+			"required": [
+				"status",
+				"updateTime"
+			],
+			"properties": {
+			    "status": {
+					"type": "string",
+					"enum": [
+					    "OK",
+					    "PARTIAL_FAILURE",
+					    "UNAVAILABLE",
+					    "SCHEDULED_OUTAGE"
+					    ]
+				},
+			    "explanation": {
+					"type": "string"
+				},
+			    "detectionTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+			    "expectedResolutionTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+			    "updateTime": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"anyOf": [
+			    {
+                    "properties": {
+                        "status": { "enum": ["OK"] }
+                    }
+			    },
+			    {
+                    "required": [ "explanation" ]
+			    }
+			    ]
+		},
+		"links": {
+			"type": "object",
+			"required": [
+				"self"
+			],
+			"properties": {
+				"self": {
+					"type": "string",
+					"format": "uri"
+				}
+			}
+		},
+		"meta": {}
+	}
+}
