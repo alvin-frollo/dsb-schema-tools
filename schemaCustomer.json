@@ -1,0 +1,166 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://consumerdatastandards.org.au/v1.0.0/customer",
+    "type": "object",
+    "required" : [
+        "data",
+        "links"
+        ],
+    "properties" : {
+        "data" : {
+            "type": "object",
+            "required" : [
+                "customerUType"
+                ],
+            "properties" : {
+                "customerUType" : {
+                    "type" : "string",
+                    "enum": ["person", "organisation"]
+                },
+                "person": {
+                    "type": "object",
+                    "required" : [
+                        "lastName",
+                        "middleNames"
+                        ],
+                    "properties" : {
+                        "lastUpdateTime" : {
+                            "type" : "string",
+                            "format": "date-time"
+                        },
+                        "firstName" : {
+                            "type" : "string"
+                        },
+                        "lastName" : {
+                            "type" : "string"
+                        },
+                        "middleNames" : {
+                            "type" : "array",
+                			"items": {
+                				"type": "string"
+                			}
+                        },
+                        "prefix" : {
+                            "type" : "string"
+                        },
+                        "suffix" : {
+                            "type" : "string"
+                        },
+                        "occupationCode" : {
+                            "type" : "string"
+                        }
+                    }
+                },
+                "organisation": {
+                    "type": "object",
+                    "required" : [
+                        "agentLastName",
+                        "agentRole",
+                        "businessName",
+                        "organisationType"
+                        ],
+                    "properties" : {
+                        "lastUpdateTime" : {
+                            "type" : "string",
+                            "format": "date-time"
+                        },
+                        "agentFirstName" : {
+                            "type" : "string"
+                        },
+                        "agentLastName" : {
+                            "type" : "string"
+                        },
+                        "agentRole" : {
+                            "type" : "string"
+                        },
+                        "businessName" : {
+                            "type" : "string"
+                        },
+                        "legalName" : {
+                            "type" : "string"
+                        },
+                        "shortName" : {
+                            "type" : "string"
+                        },
+                        "abn" : {
+                            "type" : "string"
+                        },
+                        "acn" : {
+                            "type" : "string"
+                        },
+                        "isACNCRegistered": {
+                            "type" : "boolean"
+                        },
+                        "industryCode": {
+                            "type" : "string"
+                        },
+                        "organisationType": {
+                            "type" : "string",
+                            "enum": [
+                                "SOLE_TRADER",
+                                "COMPANY",
+                                "PARTNERSHIP",
+                                "TRUST",
+                                "GOVERNMENT_ENTITY",
+                                "OTHER"
+                                ]
+                            
+                        },
+                        "registeredCountry": {
+                            "type" : "string",
+                            "format": "^[A-Z]{3,3}$"
+                        },
+                        "establishmentDate": {
+                            "type" : "string",
+                            "format": "date-time"
+                            
+                        }
+                    }
+                }
+            },                
+            "oneOf": [
+                {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "customerUType": {
+                                    "enum": ["person"]
+                                }
+                            }
+                        },
+                        {
+                            "required": [ "person" ]
+                        }
+                        ]
+                },
+                {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "customerUType": {
+                                    "enum": ["organisation"]
+                                }
+                            }
+                        },
+                        {
+                            "required": [ "organisation" ]
+                        }
+                        ]
+                }
+                ]
+        },
+        "links" : {
+            "type" : "object",
+            "required" : [
+                "self"
+                ],
+            "properties" : {
+                "self" : {
+                    "type" : "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "meta" : {}
+    }
+}
