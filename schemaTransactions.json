@@ -30,11 +30,11 @@
                         "properties" : {
                             "accountId" : {
                                 "type" : "string",
-                                "pattern": "^[\x00-\x7F]+$"
+                                "pattern": "^[\\x00-\\x7F]+$"
                             },
                             "transactionId" : {
                                 "type" : "string",
-                                "pattern": "^[\x00-\x7F]+$"
+                                "pattern": "^[\\x00-\\x7F]+$"
                             },
                             "isDetailAvailable" : {
                                 "type" : "boolean"
