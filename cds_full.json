@@ -2875,7 +2875,7 @@
         }
       },
       "BankingTransaction" : {
-            "$ref": "schemaTest.json"
+            "$ref": "https://raw.githubusercontent.com/tom-schier/dsb-schema-files/main/schemaTest.json"
       },
       "ResponseBankingTransactionById" : {
         "type" : "object",
