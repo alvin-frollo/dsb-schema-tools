@@ -23,8 +23,4 @@ Download the
 ```
 CDR Banking Sector Conformance Tests.postman.json
 ```
-and 
-
-
-
-
+and follow the instructions in the collection
