@@ -12,7 +12,7 @@ request.get('https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/st
         const schemaVersion = schemaObject.info.version;
         Object.keys(schemaObject.definitions).forEach(key => {
             let struct = schemaObject.definitions[key];
-            let data = JSON.stringify(struct).toString();
+            let data = JSON.stringify(struct, null, 2);
             let dirName = path.join(__dirname, "/schemas/" + schemaVersion);
             // create new directory
             try {
