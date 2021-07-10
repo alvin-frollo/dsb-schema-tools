@@ -18,7 +18,7 @@ The file
 template-postman-variables.json
 ```
 is designed to be used in the Postman collection test runner. Specify the data holder specific parameters and read into the postman collection prior to the test run.
-Click [here]([https://learning.postman.com/docs/running-collections/working-with-data-files/#:~:text=When%20you%20initiate%20a%20collection,file%20before%20starting%20the%20run])) for information on how to use data files in a Postman collection.
+Click [here]([https://learning.postman.com/docs/running-collections/working-with-data-files/#:~:text=When%20you%20initiate%20a%20collection,file%20before%20starting%20the%20run]) for information on how to use data files in a Postman collection.
 
 The number of tests run will be determined by the values provided in this file. Eg, if no account ids are provided, any test requiring such a parameter will be skipped.
 
