@@ -1,26 +1,39 @@
-# DSB Mock Data Holder Server
+# DSB Schema Files And Postman Collection Test Suite
 
 ## Overview
-This repository contains the schema files for the DSB published APIs.
-The program 
-```
-extract-schema-validation.js 
-```
-can be used to read the published file cds_full.json and create individual schema files.
+This repository contains a Postman collection with a set of unit tests, which can be used as a development testing tool for data holders developing a DSB compliant API.
 
-The Postman collection contains a number API test which can be run  against a data holder server.
+Additionally, this repository contains the individual schema validation files for the DSB published APIs as well as the utility used to extract those files from the published standard in ConsumerDataStandardsAustralia/standards repository (cds_full.json)
 
-
-### Running the data extraction
-To run the server, run:
-
-```
-node extract-schema-validation.js 
-```
 
 ### Using the Postman collection
 Download the 
 ```
-CDR Banking Sector Conformance Tests.postman.json
+CDR Banking Sector Conformance Tests vX.XX.X.postman.json
 ```
-and follow the instructions in the collection
+This file contains the API unit tests and can be run as a test suite (Postman Collection Runner)
+
+The file
+```
+template-postman-variables.json
+```
+is designed to be used in the Postman collection test runner. Specify the data holder specific parameters and read into the postman collection prior to the test run.
+Click [here]([quora.com/profile/Ashish-Kulkarni-100](https://learning.postman.com/docs/running-collections/working-with-data-files/#:~:text=Click%20Runner%20at%20bottom%20right,the%20values%20from%20the%20file.)) for information on how to use data files in a Postman collection.
+
+The number of tests run will be determined by the values provided in this file. Eg, if no account ids are provided, any test requiring such a parameter will be skipped.
+
+**Note the the order of the tests is important. Do not change**
+
+The file
+```
+dsb-dhserver -postman-variables.json
+```
+is configured to work with the published data-holder server maintained by DSB and available in the ConsumerDataStandardsAustralia/java-artefacts repository.
+
+### Running the data extraction
+This can be used to extract the individual schema validation files from the published cds_full.json. To run this extraction, run:
+
+```
+node extract-schema-validation.js 
+```
+This will create a folder with the version number in the cds_full.json under the schema folder.
