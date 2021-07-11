@@ -26,7 +26,7 @@ The number of tests run will be determined by the values provided in this file. 
 
 The file
 ```
-dsb-dhserver -postman-variables.json
+dsb-dhserver-postman-variables.json
 ```
 is configured to work with the published data-holder server maintained by DSB and available in the ConsumerDataStandardsAustralia/java-artefacts repository.
 
