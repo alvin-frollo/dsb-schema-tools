@@ -25,7 +25,7 @@ The number of tests run will be determined by the values provided in this file. 
 
 In Postman at the collection level, click on **Run Collection**
 
-![plot](./images/Pm_Screen2.jpg)
+![plot](https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-files/main/postman/images/Pm_Screen1.JPG?token=AETEGILKIOYBMKKWQT2M253BBBXHW)
 
 Click on **Select File** and read in the file created in Step 2.
    
