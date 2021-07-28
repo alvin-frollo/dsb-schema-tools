@@ -14,6 +14,8 @@ This Postman collection contains the API unit tests and can be run as a test sui
 
 The collection can also be run against an environment defined in * .postman-environment.json*.
 
+---
+
 ### Using the Postman Collection Runner
 To run the Postman collection as a test suite edit the file for your particular data holder server
 ```
@@ -25,23 +27,26 @@ The number of tests run will be determined by the values provided in this file. 
 
 In Postman at the collection level, click on **Run Collection**
 
-![plot](https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-files/main/postman/images/Pm_Screen1.JPG?token=AETEGILKIOYBMKKWQT2M253BBBXHW)
+<span><img src="https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-files/main/postman/images/Pm_Screen1.JPG?token=AETEGILKIOYBMKKWQT2M253BBBXHW" width="300" >
 
-Click on **Select File** and read in the file created in Step 2.
+<img src="https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-files/main/postman/images/Pm_Screen2.JPG?token=AETEGIJWGTT5AL4ZHY3ZSUDBBHFCO" width="600" ></span>
+
+
+
+Click on **Select File** and read your xxx.collection-run.postman.json with the values set specifically for the data holder server this is to be run against.
    
-![plot](./images/Pm_Screen3.jpg)   
 
-Click [here](https://learning.postman.com/docs/running-collections/working-with-data-files/#:~:text=When%20you%20initiate%20a%20collection,file%20before%20starting%20the%20run) for information on how to use data files in a Postman collection.
+<img src="https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-files/main/postman/images/Pm_Screen3.JPG?token=AETEGIOY7XKDOYL4TZHXQKLBBHVBE" width=600>
 
+
+For more information on the Postman Collection Runner and how to use it look [here](https://learning.postman.com/docs/running-collections/working-with-data-files/#:~:text=When%20you%20initiate%20a%20collection,file%20before%20starting%20the%20run).
 **Note the the order of the tests is important if this is run in the collection runner. Do not change**
 
+---
 
 ### Using a Postman environment
 
-
-
-
-
+---
 
 
 *The files DSB.collection-run.postman.json and DSB.postman_environment.json
