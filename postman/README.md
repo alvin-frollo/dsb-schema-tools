@@ -41,6 +41,12 @@ For more information on the Postman Collection Runner and how to use it look [he
 
 ### Using a Postman environment
 
+The API tests can also be run in conjunction with the *xxx.postman_environment.json* configuration file. Similarily to the *xxx.collection-run.postman.json* file this can be configured for a specific data holder server.
+
+To achieve this import the configured *xxx.postman_environment.json* as an Environment in Postman.
+
+<img src="https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-files/main/postman/images/PM_Screen4.JPG?token=AETEGIINYZ5ZM634AFT6ZITBBH4Y4" width=600>
+
 ---
 
 
