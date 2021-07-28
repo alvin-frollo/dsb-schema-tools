@@ -1,7 +1,6 @@
 
 # DSB Schema Files 
 
-This directory contains the individual schema files for all data structures defined by the Data Standards Body.
-The Postman collection in this repository is one tool which utilises these definitions.
+The schema files associated with the DSB published API definitions.
 
-To use these schema files the folder should be used in its entirety as some of the schema files contain references to other files within this directory.
+These can be used for a variety of purposes, eg development of custom validation tools, plug-in to existing API validation tools. One such example is the use of these files in the Postman collection in this repository.
