@@ -7417,7 +7417,7 @@
 					"",
 					"    // setting the base url for schema files",
 					"    var version = pm.collectionVariables.get(\"version\");",
-					"    var urlSchemaValidationFileDirectory = \"https://raw.githubusercontent.com/tom-schier/delete-me/master/\" + version;",
+					"    var urlSchemaValidationFileDirectory = \"https://github.com/ConsumerDataStandardsAustralia/dsb-schema-tools/tree/main/schemas/\" + version;",
 					"",
 					"",
 					"     //  This reads in a cds_full which has been modified to use a reference to a schema vaidation file   ",
