@@ -34,7 +34,7 @@ Click on **Select File** and read your xxx.collection-run.postman.json with the 
 <img src="https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/postman/images/Pm_Screen3.JPG?token=AETEGIOY7XKDOYL4TZHXQKLBBHVBE" width=600>
 
 
-For more information on the Postman Collection Runner and how to use it look [here](https://learning.postman.com/docs/running-collections/working-with-data-tools/#:~:text=When%20you%20initiate%20a%20collection,file%20before%20starting%20the%20run).
+For more information on the Postman Collection Runner and how to use it look [here](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
 **Note the the order of the tests is important if this is run in the collection runner. Do not change**
 
 ---
